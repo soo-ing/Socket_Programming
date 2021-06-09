@@ -51,7 +51,7 @@ int main(int argc, char *argv[]){
    printf("[minu] %x\n",i);
    write(sockfd,&i,sizeof(i));
 
-   switch(fork()){	//다중연결처리를 위해서
+   switch(fork()){	
 
       case -1:
          perror("fork error");

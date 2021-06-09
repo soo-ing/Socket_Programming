@@ -95,7 +95,7 @@ public class client extends Frame implements ActionListener, Runnable{
 	}
 	
 	@Override
-	public void actionPerformed(ActionEvent e) { 		// 값을 보내는 부분(send())
+	public void actionPerformed(ActionEvent e) { 		
 		Component component=(Component)e.getSource();
 
 		if(component instanceof TextField){
@@ -105,11 +105,9 @@ public class client extends Frame implements ActionListener, Runnable{
 				return;
 			
 			try{
-				// 서버에 연결되지 않은 경우
 				if(socket==null)
 					return;
 
-				//서버에 데이터 전송
 				PrintWriter writer=new PrintWriter(socket.getOutputStream(), true);
 
 				writer.println("["+name+"]"+str);
